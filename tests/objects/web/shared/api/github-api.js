@@ -3,7 +3,7 @@ const expect = require('@wdio/globals').expect;
 
 const githubApi = async () => {
   const octokit = new Octokit({
-    auth: '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',
+    auth: process.env.GITHUB_ACCESS_KEY,
   });
 
   const res = await octokit.request('POST /user/repos', {
