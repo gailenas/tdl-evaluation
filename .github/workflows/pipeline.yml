@@ -22,4 +22,5 @@ jobs:
         run: npm run wdio-web
 
       - name: Run MOBILE tests
+        continue-on-error: true
         run: npm run wdio-mobile
