@@ -1,0 +1,19 @@
+name: Evaluation Pipeline
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.11
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run WEB tests
+        run: npm run wdio-web
+
+      - name: Run MOBILE tests
+        run: npm run wdio-mobile
