@@ -5,6 +5,9 @@ on:
 
 jobs:
   build:
+    env:
+      ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
